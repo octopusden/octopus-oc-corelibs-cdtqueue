@@ -1,0 +1,65 @@
+﻿kind: "Template"
+apiVersion: "template.openshift.io/v1"
+metadata:
+  name: "cdtqueue"
+parameters:
+  - name: "LIB_NAME"
+    description: "Library name"
+    required: true
+    value: "cdtqueue"
+  - name: "DOCKER_REGISTRY_HOST"
+    description: "Registry host url"
+    required: true
+    value: "image-registry.openshift-image-registry.svc:5000"
+  - name: "GIT_URL"
+    description: "GIT Repository URL"
+    required: true
+  - name: "PYTHON_VERSION"
+    description: "Version of python"
+    required: true
+    value: "2.7"
+  - name: "PYTHON_VERSION_SHORT"
+    description:  "Python version short"
+    required: true
+    value: "27"
+  - name: "GIT_REF"
+    description: "GIT Reference / Branch"
+    required: true
+    value: "staging"
+objects:
+  - kind: "BuildConfig"
+    apiVersion: "build.openshift.io/v1"
+    metadata:
+      name: "corelibs-cdtapi${PYTHON_VERSION_SHORT}"
+    spec:
+      output:
+        to:
+          kind: "ImageStreamTag"
+          name: "corelibs-${LIB_NAME}${PYTHON_VERSION_SHORT}:${GIT_REF}"
+      source:
+        git:
+          uri: "${GIT_URL}cdt-si/corelibs-${LIB_NAME}.git"
+          ref: "${GIT_REF}"
+        sourceSecret:
+          name: "s-cdtcimanager"
+      strategy:
+        dockerStrategy:
+          buildArgs:
+            - name: "PYTHON_VERSION"
+              value: "${PYTHON_VERSION}"
+            - name: "DOCKER_REGISTRY_HOST"
+              value: "${DOCKER_REGISTRY_HOST}"
+          dockerfilePath: "Dockerfile"
+      triggers:
+        - type: "Bitbucket"
+          bitbucket:
+            secretReference:
+              name: "corelibs-bb-key"
+  - kind: "ImageStream"
+    apiVersion: "image.openshift.io/v1"
+    metadata:
+      name: "corelibs-${LIB_NAME}${PYTHON_VERSION_SHORT}"
+    spec:
+      lookupPolicy:
+        local: true
+

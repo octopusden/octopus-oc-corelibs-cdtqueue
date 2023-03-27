@@ -1,0 +1,9 @@
+version: "3"
+services:
+  cdtlib:
+    build:
+      context: ./
+      args:
+        TAG: ${TAG:-master}
+        DOCKER_REGISTRY_HOST: ${DOCKER_REGISTRY_HOST}
+    image: ${DOCKER_REGISTRY_HOST}/si/corelibs-cdtqueue:${TAG:-master}
