@@ -1,0 +1,46 @@
+name: Build and deploy
+run-name: build-and-deploy
+on: [push,workflow_dispatch]
+jobs:
+  build-deploy-oc_cdtqueue2:
+    runs-on: ubuntu-latest
+    environment: Prod
+    permissions:
+      id-token: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Install python2
+        run: sudo apt install python2
+      - name: Download get-pip.py
+        run: curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py
+      - name: Install pip2
+        run: sudo python2 get-pip.py
+      - name: Install setuptools
+        run: python2 -m pip install setuptools
+      - name: Setup
+        run: python2 setup.py sdist bdist_wheel
+      - name: Install
+        run: python2 -m pip install dist/*.whl && python2 setup.py test
+      - name: Publish
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          password: ${{ secrets.PYPI_API_TOKEN }}
+          verbose: false
+  build-deploy-oc_cdtqueue3:
+    runs-on: ubuntu-latest
+    environment: Prod
+    permissions:
+      id-token: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup
+        run: python3 setup.py sdist bdist_wheel
+      - name: Install
+        run: python3 -m pip install dist/*.whl && python3 setup.py test
+      - name: Publish
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          password: ${{ secrets.PYPI_API_TOKEN }}
+          verbose: false
