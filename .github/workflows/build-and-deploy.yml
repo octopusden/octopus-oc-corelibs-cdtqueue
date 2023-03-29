@@ -27,6 +27,7 @@ jobs:
         with:
           password: ${{ secrets.PYPI_API_TOKEN }}
           verbose: false
+          distributions: dist/*.whl
   build-deploy-oc_cdtqueue3:
     runs-on: ubuntu-latest
     environment: Prod
@@ -44,3 +45,4 @@ jobs:
         with:
           password: ${{ secrets.PYPI_API_TOKEN }}
           verbose: false
+          distributions: dist/*.whl
