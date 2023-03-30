@@ -22,12 +22,13 @@ jobs:
         run: python2 setup.py sdist bdist_wheel
       - name: Install
         run: python2 -m pip install dist/*.whl && python2 setup.py test
+      - name: Remove tars
+        run: rm -f dist/*.tar.gz
       - name: Publish
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
           password: ${{ secrets.PYPI_API_TOKEN }}
           verbose: false
-          distributions: dist/*.whl
   build-deploy-oc_cdtqueue3:
     runs-on: ubuntu-latest
     environment: Prod
@@ -40,9 +41,10 @@ jobs:
         run: python3 setup.py sdist bdist_wheel
       - name: Install
         run: python3 -m pip install dist/*.whl && python3 setup.py test
+      - name: Remove tars
+        run: rm -f dist/*.tar.gz
       - name: Publish
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
           password: ${{ secrets.PYPI_API_TOKEN }}
           verbose: false
-          distributions: dist/*.whl
