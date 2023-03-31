@@ -1,10 +1,15 @@
 name: Build and deploy
 run-name: build-and-deploy
-on: [push,workflow_dispatch]
+on:
+  workflow_call:
+    inputs:
+      process_env:
+        required: true
+        type: string
 jobs:
   build-deploy-oc_cdtqueue2:
     runs-on: ubuntu-latest
-    environment: Prod
+    environment: ${{ inputs.process_env }}
     permissions:
       id-token: write
     steps:
@@ -31,7 +36,7 @@ jobs:
           verbose: false
   build-deploy-oc_cdtqueue3:
     runs-on: ubuntu-latest
-    environment: Prod
+    environment: ${{ inputs.process_env }}
     permissions:
       id-token: write
     steps:

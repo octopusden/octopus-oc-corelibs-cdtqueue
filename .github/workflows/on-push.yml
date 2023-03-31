@@ -1,0 +1,12 @@
+name: Push: Deploy to test 
+on: [push,workflow_dispatch]
+jobs:
+  checkout-and-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+  run-main:
+    uses: ./.github/workflows/build-and-deploy.yml
+    with:
+      process_env: Test
