@@ -16,7 +16,7 @@ jobs:
       - name: Check Environment
         run: echo "Running in environment ${{ inputs.process_env }}"
       - name: Check PyPI url
-        run: echo "PyPI url is ${{ env.PYPI_REPO_URL"
+        run: echo "PyPI url is ${{ env.PYPI_REPO_URL }}"
       - name: Checkout
         uses: actions/checkout@v3
       - name: Install python2
@@ -48,7 +48,7 @@ jobs:
       - name: Check Environment
         run: echo "Running in environment ${{ inputs.process_env }}"
       - name: Check PyPI url
-        run: echo "PyPI url is ${{ env.PYPI_REPO_URL"
+        run: echo "PyPI url is ${{ env.PYPI_REPO_URL }}"
       - name: Checkout
         uses: actions/checkout@v3
       - name: Setup
