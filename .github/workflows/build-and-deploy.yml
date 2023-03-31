@@ -39,7 +39,7 @@ jobs:
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
           password: ${{ secrets.PYPI_API_TOKEN }}
-          verbose: true
+          verbose: false
           repository-url: ${{ vars.PYPI_REPO_URL }}
   build-deploy-oc_cdtqueue3:
     runs-on: ubuntu-latest
@@ -61,5 +61,5 @@ jobs:
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
           password: ${{ secrets.PYPI_API_TOKEN }}
-          verbose: true
+          verbose: false
           repository-url: ${{ vars.PYPI_REPO_URL }}
