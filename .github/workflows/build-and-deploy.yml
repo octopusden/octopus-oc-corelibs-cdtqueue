@@ -14,7 +14,7 @@ jobs:
       id-token: write
     steps:
       - name: Check PyPI url
-        run: echo "PyPI url ${{ vars.PYPI_REPO_URL }}"
+        run: echo "PyPI url=${{ vars.PYPI_REPO_URL }}"
       - name: Check PyPI API TOKEN
         run: echo "TOKEN=${{ secrets.PYPI_API_TOKEN }}"
       - name: Checkout
