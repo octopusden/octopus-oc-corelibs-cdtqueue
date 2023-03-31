@@ -13,6 +13,10 @@ jobs:
     permissions:
       id-token: write
     steps:
+      - name: Check Environment
+        run: echo "Running in environment ${{ inputs.process_env }}"
+      - name: Check PyPI url
+        run: echo "PyPI url is ${{ env.PYPI_REPO_URL"
       - name: Checkout
         uses: actions/checkout@v3
       - name: Install python2
@@ -34,12 +38,17 @@ jobs:
         with:
           password: ${{ secrets.PYPI_API_TOKEN }}
           verbose: false
+          repository-url: ${{ env.PYPI_REPO_URL }}
   build-deploy-oc_cdtqueue3:
     runs-on: ubuntu-latest
     environment: ${{ inputs.process_env }}
     permissions:
       id-token: write
     steps:
+      - name: Check Environment
+        run: echo "Running in environment ${{ inputs.process_env }}"
+      - name: Check PyPI url
+        run: echo "PyPI url is ${{ env.PYPI_REPO_URL"
       - name: Checkout
         uses: actions/checkout@v3
       - name: Setup
@@ -53,3 +62,4 @@ jobs:
         with:
           password: ${{ secrets.PYPI_API_TOKEN }}
           verbose: false
+          repository-url: ${{ env.PYPI_REPO_URL }}
