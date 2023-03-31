@@ -1,4 +1,4 @@
-name: Push: Deploy to test 
+name: Push Deploy to test 
 on: [push,workflow_dispatch]
 jobs:
   checkout-and-run:
