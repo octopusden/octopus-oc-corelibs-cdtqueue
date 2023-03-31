@@ -8,6 +8,7 @@ on:
         type: string
     secrets:
       PYPI_API_TOKEN:
+        required: true
 jobs:
   build-deploy-oc_cdtqueue2:
     runs-on: ubuntu-latest
