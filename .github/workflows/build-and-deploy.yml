@@ -10,7 +10,7 @@ on:
       PYPI_API_TOKEN:
         required: true
 jobs:
-  build-deploy-oc_cdtqueue2:
+  build-deploy-for-python2:
     runs-on: ubuntu-latest
     environment: ${{ inputs.process_env }}
     permissions:
@@ -44,7 +44,7 @@ jobs:
           password: ${{ secrets.PYPI_API_TOKEN }}
           verbose: false
           repository-url: ${{ vars.PYPI_REPO_URL }}
-  build-deploy-oc_cdtqueue3:
+  build-deploy-for-python3:
     runs-on: ubuntu-latest
     environment: ${{ inputs.process_env }}
     permissions:
