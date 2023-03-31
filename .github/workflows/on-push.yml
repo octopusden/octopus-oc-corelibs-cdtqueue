@@ -10,3 +10,5 @@ jobs:
     uses: ./.github/workflows/build-and-deploy.yml
     with:
       process_env: Test
+    secrets:
+      PYPI_API_TOKEN: ${{ secrets.PYPI_API_TOKEN }}
