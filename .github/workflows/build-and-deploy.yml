@@ -13,8 +13,6 @@ jobs:
     permissions:
       id-token: write
     steps:
-      - name: Check Environment
-        run: echo "Environment ${{ inputs.process_env }}"
       - name: Check PyPI url
         run: echo "PyPI url ${{ env.PYPI_REPO_URL }}"
       - name: Checkout
@@ -45,8 +43,6 @@ jobs:
     permissions:
       id-token: write
     steps:
-      - name: Check Environment
-        run: echo "Environment ${{ inputs.process_env }}"
       - name: Check PyPI url
         run: echo "PyPI url ${{ env.PYPI_REPO_URL }}"
       - name: Checkout
