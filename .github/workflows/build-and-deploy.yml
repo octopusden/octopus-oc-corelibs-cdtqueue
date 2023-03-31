@@ -1,12 +1,13 @@
 name: Build and deploy
 run-name: build-and-deploy
-#on:
-#  workflow_call:
-#    inputs:
-#      process_env:
-#        required: true
-#        type: string
-on: [push]
+on:
+  workflow_call:
+    inputs:
+      process_env:
+        required: true
+        type: string
+    secrets:
+      PYPI_API_TOKEN:
 jobs:
   build-deploy-oc_cdtqueue2:
     runs-on: ubuntu-latest
