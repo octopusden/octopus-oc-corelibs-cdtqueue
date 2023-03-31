@@ -9,7 +9,7 @@ on:
 jobs:
   build-deploy-oc_cdtqueue2:
     runs-on: ubuntu-latest
-    environment: ${{ inputs.process_env }}
+    environment: Test
     permissions:
       id-token: write
     steps:
