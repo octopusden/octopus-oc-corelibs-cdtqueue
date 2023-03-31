@@ -1,0 +1,13 @@
+name: On push, deploying to Test
+on: [push,workflow_dispatch]
+jobs:
+  checkout:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+  run-build-and-deploy:
+    uses: ./.github/workflows/build-and-deploy.yml
+    with:
+      process_env: Test
+    secrets: inherit
