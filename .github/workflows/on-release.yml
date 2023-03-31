@@ -1,9 +1,9 @@
-name: Release Deploy to prod
+name: On Release, deploying to Prod
 on:
   release:
     types: [published]
 jobs:
-  checkout-and-run:
+  checkout:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

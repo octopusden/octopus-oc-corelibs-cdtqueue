@@ -1,5 +1,4 @@
 name: Build and deploy
-run-name: build-and-deploy
 on:
   workflow_call:
     inputs:

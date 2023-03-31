@@ -1,7 +1,7 @@
-name: Push Deploy to test 
+name: On push, deploying to Test
 on: [push,workflow_dispatch]
 jobs:
-  checkout-and-run:
+  checkout:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
