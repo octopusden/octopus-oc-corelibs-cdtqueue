@@ -33,6 +33,8 @@ setup(name="oc_cdt_queue2",
       version=dynamic_version(
           ".".join(list(map(lambda x: str(x), [MAJOR, MINOR, RELEASE])))),
       description="Code for CDT message queue management",
+      long_description="Code for CDT message queue management",
+      long_description_content_type="text/plain",
       license="Apache2.0",
       install_requires=[
           "pika==1.1.0",
