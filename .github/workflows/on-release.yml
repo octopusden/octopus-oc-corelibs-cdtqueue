@@ -2,14 +2,8 @@ name: On Release, deploying to Prod
 on:
   release:
     types: [published]
-jobs:
-  checkout:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
   run-build-and-deploy:
-    uses: ./.github/workflows/build-and-deploy.yml
+    uses: octopusden/octopus-base/.github/workflows/common-py-2-3-build-deploy.yml@common-workflows
     with:
       process_env: Prod
     secrets: inherit
