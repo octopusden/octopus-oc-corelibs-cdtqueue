@@ -1,5 +1,5 @@
 import unittest
-from cdt_queue2.queue_base import QueueBase
+from oc_cdt_queue2.queue_base import QueueBase
 import argparse
 import logging
 

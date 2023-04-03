@@ -1,8 +1,8 @@
 import unittest
-from cdt_queue2.queue_connection_prcs import QueueConnectionProcess
-from cdt_queue2.ipc_messages import IpcMessage
-from cdt_queue2.ipc_messages import IpcMessageResult
-from cdt_queue2.ipc_messages import IpcExcMsg
+from oc_cdt_queue2.queue_connection_prcs import QueueConnectionProcess
+from oc_cdt_queue2.ipc_messages import IpcMessage
+from oc_cdt_queue2.ipc_messages import IpcMessageResult
+from oc_cdt_queue2.ipc_messages import IpcExcMsg
 from .mocks.queue_t import JoinableQueue
 import pika
 import logging

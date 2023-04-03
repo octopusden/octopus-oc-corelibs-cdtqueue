@@ -1,5 +1,5 @@
 import unittest
-from cdt_queue2.queue_rpc import QueueRPC
+from oc_cdt_queue2.queue_rpc import QueueRPC
 
 
 class _TestClass(QueueRPC):

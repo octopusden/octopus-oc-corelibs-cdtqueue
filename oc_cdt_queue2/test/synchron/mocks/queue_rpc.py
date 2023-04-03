@@ -1,4 +1,4 @@
-from cdt_queue2.queue_rpc import QueueRPC as QCQ
+from oc_cdt_queue2.queue_rpc import QueueRPC as QCQ
 from .queue_loopback import LoopbackConnection
 
 class QueueRPC(QCQ):

@@ -8,7 +8,7 @@ from datetime import datetime
 
 def my_test_suite():
     test_loader = unittest.TestLoader()
-    test_suite = test_loader.discover('cdt_queue2')
+    test_suite = test_loader.discover('oc_cdt_queue2')
     return test_suite
 
 def dynamic_version(version):
@@ -29,7 +29,7 @@ MINOR = 0
 RELEASE = 1
 
 
-setup(name="cdt_queue2",
+setup(name="oc_cdt_queue2",
       version=dynamic_version(
           ".".join(list(map(lambda x: str(x), [MAJOR, MINOR, RELEASE])))),
       description="Code for CDT message queue management",

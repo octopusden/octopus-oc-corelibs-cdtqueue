@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from cdt_queue2.queue_base import QueueBase
+from oc_cdt_queue2.queue_base import QueueBase
 import pika
 import json
 import os
