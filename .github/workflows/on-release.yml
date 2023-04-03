@@ -2,6 +2,7 @@ name: On Release, deploying to Prod
 on:
   release:
     types: [published]
+jobs:
   run-build-and-deploy:
     uses: octopusden/octopus-base/.github/workflows/common-py-2-3-build-deploy.yml@main
     with:
