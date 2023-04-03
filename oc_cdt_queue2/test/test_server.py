@@ -1,8 +1,8 @@
 import unittest
-from cdt_queue2.queue_server import QueueServer
-from cdt_queue2.ipc_messages import IpcExcMsg
-from cdt_queue2.ipc_messages import IpcMessage
-from cdt_queue2.ipc_messages import IpcMessageResult
+from oc_cdt_queue2.queue_server import QueueServer
+from oc_cdt_queue2.ipc_messages import IpcExcMsg
+from oc_cdt_queue2.ipc_messages import IpcMessage
+from oc_cdt_queue2.ipc_messages import IpcMessageResult
 import argparse
 import logging
 import pika

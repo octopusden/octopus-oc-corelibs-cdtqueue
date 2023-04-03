@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from cdt_queue2.queue_client import QueueClient
+from oc_cdt_queue2.queue_client import QueueClient
 
 
 class _CallbackHelper(object):

@@ -1,5 +1,5 @@
 import unittest
-from cdt_queue2.queue_application import QueueApplication
+from oc_cdt_queue2.queue_application import QueueApplication
 import pika
 import logging
 import argparse

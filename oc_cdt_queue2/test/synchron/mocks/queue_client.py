@@ -1,4 +1,4 @@
-from cdt_queue2.queue_client import QueueClient as QCQ
+from oc_cdt_queue2.queue_client import QueueClient as QCQ
 from .queue_loopback import LoopbackConnection
 
 class QueueClient(QCQ):

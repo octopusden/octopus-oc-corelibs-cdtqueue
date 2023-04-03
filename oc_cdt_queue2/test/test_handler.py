@@ -1,5 +1,5 @@
 import unittest
-from cdt_queue2.queue_handler import QueueHandler
+from oc_cdt_queue2.queue_handler import QueueHandler
 import json
 import logging
 

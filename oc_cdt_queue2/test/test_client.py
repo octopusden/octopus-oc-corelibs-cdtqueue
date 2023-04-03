@@ -1,5 +1,5 @@
 import unittest
-from cdt_queue2.queue_client import QueueClient
+from oc_cdt_queue2.queue_client import QueueClient
 import argparse
 import pika
 import time
