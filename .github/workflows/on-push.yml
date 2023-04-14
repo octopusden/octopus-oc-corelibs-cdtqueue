@@ -5,4 +5,5 @@ jobs:
     uses: octopusden/octopus-base/.github/workflows/common-py-build-deploy.yml@py-test-procedure
     with:
       process_env: Test
+      python_versions: "2,3"
     secrets: inherit
