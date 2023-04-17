@@ -2,7 +2,7 @@ name: On push, deploying to Test
 on: [push]
 jobs:
   run-build-and-deploy:
-    uses: octopusden/octopus-base/.github/workflows/common-py-build-deploy.yml@py-test-procedure
+    uses: octopusden/octopus-base/.github/workflows/common-py-build-deploy.yml@main
     with:
       process_env: Test
       python_versions: "2,3"
