@@ -2,7 +2,8 @@ name: On push, deploying to Test
 on: [push]
 jobs:
   run-build-and-deploy:
-    uses: octopusden/octopus-base/.github/workflows/common-py-2-3-build-deploy.yml@main
+    uses: octopusden/octopus-base/.github/workflows/common-py-build-deploy.yml@main
     with:
       process_env: Test
+      python_versions: "2,3"
     secrets: inherit
