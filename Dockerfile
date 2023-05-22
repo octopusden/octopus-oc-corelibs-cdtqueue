@@ -1,9 +1,8 @@
 ARG PYTHON_VERSION=3.7
-ARG DOCKER_REGISTRY_HOST=${DOCKER_REGISTRY_HOST}
-FROM ${DOCKER_REGISTRY_HOST}/base/python-${PYTHON_VERSION}:master
+FROM python:${PYTHON_VERSION}
 
-COPY . /local/cdtqueue
-
-WORKDIR /local/cdtqueue
-
-RUN python setup.py sdist bdist_wheel && python -m pip install dist/*.whl && python setup.py test
+RUN rm -rf /build
+COPY --chown=root:root . /build
+WORKDIR /build
+USER root
+RUN python -m pip install $(pwd) && python -m unittest discover -v && python setup.py bdist_wheel
