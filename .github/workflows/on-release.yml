@@ -7,5 +7,5 @@ jobs:
     uses: octopusden/octopus-base/.github/workflows/common-py-build-deploy.yml@main
     with:
       process_env: Prod
-      python_versions: "2,3"
+      python_versions: "3"
     secrets: inherit
