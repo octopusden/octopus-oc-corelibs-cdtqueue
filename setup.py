@@ -16,7 +16,7 @@ spec = {
         "license": "Apache2.0",
         "install_requires": ["pika"],
         "packages": included_packages,
-        "python_requires": ">=3.7"
+        "python_requires": ">=3.6"
         }
 
 
