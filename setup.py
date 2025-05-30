@@ -5,7 +5,7 @@ from setuptools import find_packages
 # NOTE: here we need tests also because many dependent packages uses them for their testing
 included_packages = find_packages()
 
-__version = "4.1.1"
+__version = "4.1.2"
 
 spec = {
         "name": "oc-cdt-queue2",
