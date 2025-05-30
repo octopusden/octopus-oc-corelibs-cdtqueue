@@ -15,7 +15,6 @@ class QueueApplication(QueueHandler):
     """
 
     def _connect_and_run(self):
-        logging.info('connecting to %s:%d queue %s as user %s', self.connection_parameters.host, self.connection_parameters.port, self.queue, self.connection_parameters.credentials.username)
 
         try:
             self.connect()
