@@ -24,9 +24,4 @@ class QueueHandler(QueueServer):
 
         r = call(*arguments, **parameters)
         if r is not None:
-            if r == 1:
-                warnings.warn(
-                    "Do not use return 1 in your methods to indicate success anymore. This is deprecated now. Also, use exceptions to indicate failure")
-            else:
-                raise ValueError(
-                    "Call to method returned unexpected value %s" % str(r))
+            warnings.warn("Call to method returned unexpected value %s" % str(r))
